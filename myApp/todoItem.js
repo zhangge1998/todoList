@@ -3,16 +3,35 @@
  */
 import React from 'react'
 class TodoItem extends React.Component {
-    handleChange(event) {
-        var isChecked = event.target.checked;
-    }
+    constructor(props) {
+        super(props);
 
+        this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+    handleClick() {
+        var status = this.props.isDone;
+        status = (status === 0 ? 1 : 0);
+        var obj = {
+            text: this.props.text,
+            status: status
+        };
+        this.props.changeFinish(obj);
+    }
+    handleDelete(){
+        var status = this.props.isDone;
+        var obj = {
+            text: this.props.text,
+            status: status
+        };
+        this.props.changeDelete(obj);
+    }
     render() {
         return(
             <li>
-                <input type="checkBox" checked={this.props.isDone} onChange={this.handleChange.bind(this)}/>
+                <input type="checkBox" onClick={this.handleClick.bind(this)}/>
                 {this.props.text}
-                <button>X</button>
+                <button onClick={this.handleDelete.bind(this)}>X</button>
             </li>
         )
     }

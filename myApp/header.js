@@ -9,7 +9,7 @@ class Header extends React.Component {
             if(item != ''){
                 let newtodo = {
                     text: item,
-                    isDone: false
+                    status: 0
                 };
                 event.target.value = '';
                 this.props.addTodo(newtodo);
@@ -21,7 +21,7 @@ class Header extends React.Component {
         return (
             <div>
                 <h1>todos</h1>
-                <input type="text" placeholder="What should to be done?" onKeyDown={this.handleChange.bind(this)}/>
+                <input type="text" placeholder="What should to be done?" onKeyDown={this.handleChange.bind(this)} autoFocus="autoFocus"/>
             </div>
         )
     }

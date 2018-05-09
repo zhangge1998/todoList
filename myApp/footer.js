@@ -3,12 +3,16 @@
  */
 import React from 'react'
 class Footer extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
     render() {
         return(
             <div>
-                <button>All</button>
-                <button>Completed</button>
-                <button>Active</button>
+                <button onClick={this.props.showAll.bind(this)}>All</button>
+                <button onClick={this.props.showCompleted.bind(this)}>Completed</button>
+                <button onClick={this.props.showActive.bind(this)}>Active</button>
             </div>
         )
     }
