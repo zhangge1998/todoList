@@ -21,7 +21,7 @@ class Header extends React.Component {
         return (
             <div>
                 <h1>todos</h1>
-                <input type="text" placeholder="What should to be done?" onKeyDown={this.handleChange.bind(this)} autoFocus="autoFocus"/>
+                <input id="text" type="text" placeholder="What should to be done?" onKeyDown={this.handleChange.bind(this)} autoFocus="autoFocus"/>
             </div>
         )
     }

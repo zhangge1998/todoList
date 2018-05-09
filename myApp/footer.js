@@ -6,13 +6,34 @@ class Footer extends React.Component {
     constructor(props) {
         super(props);
 
+        this.showAll = this.showAll.bind(this);
+        this.showCompleted = this.showCompleted.bind(this);
+        this.showActive = this.showActive.bind(this);
+        this.clearDone = this.clearDone.bind(this);
+
+    }
+    showAll() {
+        this.props.showAll();
+    }
+    showCompleted() {
+        this.props.showCompleted();
+    }
+    showActive() {
+        this.props.showActive();
+    }
+    clearDone() {
+        console.log('clear');
+        this.props.clearDone()
     }
     render() {
+        let left = this.props.todos.length - this.props.finished;
         return(
             <div>
-                <button onClick={this.props.showAll.bind(this)}>All</button>
-                <button onClick={this.props.showCompleted.bind(this)}>Completed</button>
-                <button onClick={this.props.showActive.bind(this)}>Active</button>
+                <span id="left">{left} item left</span>
+                <button onClick={this.showAll} id="all">All</button>
+                <button onClick={this.showCompleted} id="completed">Completed</button>
+                <button onClick={this.showActive} id="active">Active</button>
+                <button onClick={this.clearDone} id="clear">clearDone</button>
             </div>
         )
     }

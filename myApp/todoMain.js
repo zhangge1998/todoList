@@ -19,11 +19,10 @@ class TodoMain extends React.Component{
             var todoItems = todos.map(function(todo, index){
                 return(
                     <TodoItem key={index} text={todo.text} isDone={todo.status} changeFinish={handleFinish} changeDelete={handleDelete}/>
-                    //{...this.props} 用来传递TodoMain的todos属性和delete、change方法。
                 )
             });
             return(
-                <ul>{todoItems}</ul>
+                <ul id="list">{todoItems}</ul>
             )
         }
     }
