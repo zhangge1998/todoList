@@ -94,6 +94,7 @@ class TodoList extends React.Component {
             return item.status === 1
         });
         this.setState({todos: newTodos, finished: finished.length})
+        // console.log(this.state);
     }
 
 

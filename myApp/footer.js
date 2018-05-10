@@ -21,7 +21,8 @@ class Footer extends React.Component {
         this.props.showActive();
     }
     clearDone() {
-        this.props.clearDone()
+        this.props.clearDone();
+        // console.log(this.props.todos);
     }
     render() {
         let left = this.props.todos.length - this.props.finished;
