@@ -16,22 +16,22 @@ class TodoItem extends React.Component {
 
     }
     handleClick() {
-        var status = this.props.isDone;
+        let status = this.props.isDone;
         if(status === 0){
             status = 1;
         }
         else{
             status = 0;
         }
-        var obj = {
+        let obj = {
             text: this.props.text,
             status: status
         };
         this.props.changeFinish(obj);
     }
     handleDelete(){
-        var status = this.props.isDone;
-        var obj = {
+        let status = this.props.isDone;
+        let obj = {
             text: this.props.text,
             status: status
         };

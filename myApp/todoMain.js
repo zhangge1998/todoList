@@ -16,7 +16,7 @@ class TodoMain extends React.Component{
             let todos = this.props.todos;
             let handleFinish = this.props.changeFinish;
             let handleDelete = this.props.changeDelete;
-            var todoItems = todos.map(function(todo, index){
+            let todoItems = todos.map(function(todo, index){
                 return(
                     <TodoItem key={index} text={todo.text} isDone={todo.status} changeFinish={handleFinish} changeDelete={handleDelete}/>
                 )

@@ -32,7 +32,7 @@ class TodoList extends React.Component {
         })
     }
     handleFinish(obj) {
-        var num = 0;
+        let num = 0;
         this.setState(this.state.todos.map((item)=>{
             if(item.text === obj.text) {
                 item.status =obj.status;
@@ -45,10 +45,10 @@ class TodoList extends React.Component {
     }
     handleDelete(obj) {
         this.setState((prevState)=>{
-            var newtodos = prevState.todos.filter((item) => {
+            let newtodos = prevState.todos.filter((item) => {
                 return item.text !== obj.text
             });
-            var num = 0;
+            let num = 0;
             newtodos.map(item=>{
                 if(item.status === 1) {
                     num++;
@@ -87,10 +87,10 @@ class TodoList extends React.Component {
         // })
     }
     clearDone() {
-        var newTodos = this.state.todos.filter(item =>{
+        let newTodos = this.state.todos.filter(item =>{
             return item.status === 0
         });
-        var finished = newTodos.filter(item=>{
+        let finished = newTodos.filter(item=>{
             return item.status === 1
         });
         this.setState({todos: newTodos, finished: finished.length})
