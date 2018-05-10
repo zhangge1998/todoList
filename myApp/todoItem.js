@@ -9,12 +9,14 @@ class TodoItem extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.handleOver = this.handleOver.bind(this);
-        this.handleOut = this.handleOut.bind(this);
+        // this.handleOver = this.handleOver.bind(this);
+        // this.handleOut = this.handleOut.bind(this);
+    }
+    componentDidMount() {
+
     }
     handleClick() {
         var status = this.props.isDone;
-        console.log(status);
         if(status === 0){
             status = 1;
         }
@@ -35,19 +37,12 @@ class TodoItem extends React.Component {
         };
         this.props.changeDelete(obj);
     }
-    handleOver() {
-        var Btn = document.getElementsByClassName('destroy');
-        ReactDom.findDOMNode(Btn).style.display = 'block';
-    }
-    handleOut() {
-
-    }
     render() {
         return(
-            <li onMouseOver={this.handleOver} onMouseOut={this.handleOut}>
+            <li>
                 <input type="checkBox" checked={this.props.isDone} onClick={this.handleClick.bind(this)}/>
                 {this.props.text}
-                <button className="destroy" onClick={this.handleDelete.bind(this)}>X</button>
+                <button className="destroy" onClick={this.handleDelete.bind(this)}></button>
             </li>
         )
     }

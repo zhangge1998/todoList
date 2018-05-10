@@ -48,7 +48,13 @@ class TodoList extends React.Component {
             var newtodos = prevState.todos.filter((item) => {
                 return item.text !== obj.text
             });
-            return ({todos: newtodos});
+            var num = 0;
+            newtodos.map(item=>{
+                if(item.status === 1) {
+                    num++;
+                }
+            });
+            return ({todos: newtodos,finished: num});
         });
     }
     handleAll() {

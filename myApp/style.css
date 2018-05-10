@@ -45,7 +45,7 @@ h1{
 
 }
 #list li .destroy{
-    display: none;
+    /*display: none;*/
     position: absolute;
     top: 0;
     right: 10px;
@@ -75,6 +75,6 @@ h1{
     /*display: none;*/
 }
 #root #left{
-    display: none;
+    /*display: none;*/
     margin-right: 20px;
 }

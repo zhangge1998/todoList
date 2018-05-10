@@ -5,7 +5,6 @@ import React from 'react'
 class Footer extends React.Component {
     constructor(props) {
         super(props);
-
         this.showAll = this.showAll.bind(this);
         this.showCompleted = this.showCompleted.bind(this);
         this.showActive = this.showActive.bind(this);
@@ -22,7 +21,6 @@ class Footer extends React.Component {
         this.props.showActive();
     }
     clearDone() {
-        console.log('clear');
         this.props.clearDone()
     }
     render() {
